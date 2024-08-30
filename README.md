@@ -15,6 +15,7 @@ The things you need before installing the software.
 * install requirements $ pip install -r requirements.txt
 * create at the root of the project a .env file
 * inside .env create this variable FLASK_APP=main.py
+* create inside app directory another directory called database
 
 ### Installation
 
