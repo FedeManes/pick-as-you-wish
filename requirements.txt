@@ -1,0 +1,4 @@
+flask
+Flask-Bootstrap
+flask_sqlalchemy
+python-dotenv

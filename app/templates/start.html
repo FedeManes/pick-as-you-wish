@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+    {{ super() }}
+    Empezar 
+{% endblock %}
+
+{% block content %}
+
+    <h3>Empeza tu aventura</h1>
+    <div>{{story}}</div>
+
+    {% for i in range(choose|length)%}
+        <div>
+            <form action='/choose' method='post'>
+                <div>{{chooseText[i]}}</div>
+                <input type='submit' name='option' value='{{choose[i]}}'/>
+            </form>
+        </div>
+    {% endfor %}
+
+{% endblock %}

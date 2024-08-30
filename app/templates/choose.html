@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+    {{ super() }}
+    Elegi 
+{% endblock %}
+
+{% block content %}
+
+    <h1>Elegi para continuar</h1>
+    <div>{{story}}</div>
+
+    {% if id == 3 or id == 5 %}
+        <h3>Perdiste</h3>
+        <button><a href={{ url_for('index') }}>'Volver a Comenzar'</a></button>
+    {% elif id == 4 %}
+        <h3>CONTINUARA ....</h3>
+        <button><a href={{ url_for('index') }}>'Volver a Comenzar'</a></button>
+    {% else %}
+        {% for i in range(choose|length)%}
+            <div>
+                <form action='/choose' method='post'>
+                    <div>{{chooseText[i]}}</div>
+                    <input type='submit' name='option' value='{{choose[i]}}'/>
+                </form>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
